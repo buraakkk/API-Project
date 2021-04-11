@@ -62,19 +62,19 @@ body{
     font-size: 1.1rem;
     font-family: inherit;
     outline: 0;
-    border: 1px solid var(--tenne-tawny);
-    color: var(--tenne-tawny);
+    border: 1px solid black;
+    color: black;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
 }
 .search-control::placeholder{
-    color: var(--tenne-tawny);
+    color:black;
 }
 .search-btn{
-    width: 55px;
-    height: 55px;
-    font-size: 1.8rem;
-    background: var(--tenne-tawny);
+    width: 60px;
+    height: 60px;
+    font-size: 1.9rem;
+    background: black;
     color: #fff;
     border: none;
     border-top-right-radius: 2rem;
@@ -86,7 +86,7 @@ body{
     -o-transition: all 0.4s linear;
 }
 .search-btn:hover{
-    background: var(--tenne-tawny-dark);
+    background: red;
 }
 .show-result{
     margin-top: 4rem;
@@ -117,12 +117,12 @@ body{
 .intro-btn{
     text-decoration: none;
     color: #fff;
-    background: var(--tenne-tawny);
+    background:black;
     font-weight: 500;
     font-size: 1.1rem;
     padding: 0.75rem 0;
     display: block;
-    width: 175px;
+    width: 150px;
     margin: 1rem auto;
     border-radius: 2rem;
     -webkit-border-radius: 2rem;
@@ -136,7 +136,7 @@ body{
     -o-transition: all 0.4s linear;
 }
 .intro-btn:hover{
-    background: var(--tenne-tawny-dark);
+    background: red;
 }
 
 /* show details */
@@ -150,7 +150,7 @@ body{
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     color: #fff;
-    background: var(--tenne-tawny);
+    background:black;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -206,25 +206,11 @@ body{
     opacity: 0.9;
 }
 .intro-title{
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding-bottom: 1rem;
 }
 .intro-category{
-    background: #fff;
     font-weight: 600;
-    color: var(--tenne-tawny);
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.3rem;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    -o-border-radius: 0.3rem;
-}
-.intro-category{
-    background: #fff;
-    font-weight: 600;
-    color: var(--tenne-tawny);
     display: inline-block;
     padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
@@ -268,8 +254,8 @@ body{
 /*  */
 .notFound{
     grid-template-columns: 1fr!important;
-    color: var(--tenne-tawny);
-    font-size: 1.8rem;
+    color: black;
+    font-size: 2rem;
     font-weight: 600;
     width: 100%;
 }

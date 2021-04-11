@@ -42,7 +42,6 @@ function getShowIntro(e) {
   e.preventDefault();
   if (e.target.classList.contains("intro-btn")) {
     let showItem = e.target.parentElement.parentElement;
-    console.log(showItem.dataset.id);
     fetch(`https://api.tvmaze.com/shows/${showItem.dataset.id}`)
       .then((response) => response.json())
       .then((data) => showIntroModal(data));
@@ -54,8 +53,11 @@ function showIntroModal(show) {
   console.log(show);
   let html = `
         <h2 class = "intro-title">${show.name}</h2>
-        <p class = "intro-category">${show.genres[0]}</p>
         <div class = "intro-instruct">
+            <h3>Genres:</h3>  
+            <p>${show.genres[0]}</p>
+            <h3>Schedule:</h3>
+            <p>${show.schedule.days} ${show.schedule.time}</p>
             <h3>Duration:</h3>
             <p>${show.runtime}</p>
             <h3>Language:</h3>
