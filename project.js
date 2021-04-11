@@ -17,7 +17,7 @@ function getShowList() {
     .then((response) => response.json())
     .then((data) => {
       let html = "";
-      if (data) {
+      if (data[0]) {
         for (i = 0; i < data.length; i++) {
           html += `
                     <div class = "show-item" data-id = "${data[i].show.id}">
@@ -33,7 +33,6 @@ function getShowList() {
         html = "Sorry, we didn't find any show which you are searching!";
         showList.classList.add("notFound");
       }
-
       showList.innerHTML = html;
     });
 }
