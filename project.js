@@ -30,7 +30,7 @@ function getShowList() {
         }
         showList.classList.remove("notFound");
       } else {
-        html = "Sorry, we didn't find any show which you are searching!";
+        html = "Sorry, the search did not have any matches.";
         showList.classList.add("notFound");
       }
       showList.innerHTML = html;
