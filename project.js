@@ -7,27 +7,28 @@ const showCloseBtn = document.getElementById("intro-close-btn");
 searchBtn.addEventListener("click", getShowList);
 showList.addEventListener("click", getShowIntro);
 showCloseBtn.addEventListener("click", () => {
-showDetailsContent.parentElement.classList.remove("showIntro");
+  showDetailsContent.parentElement.classList.remove("showIntro");
 });
 
-// get show list 
+// get show list
 function getShowList() {
   let searchInputTxt = document.getElementById("search-input").value.trim();
   fetch(`https://api.tvmaze.com/search/shows?q=${searchInputTxt}`)
     .then((response) => response.json())
     .then((data) => {
       let html = "";
-      if (data[0]) {
-        for (i = 0; i < data.length; i++) {
+      if (Array.isArray(data) && data.length > 0) {
+        html = data.reduce((html, searchResult) => {
           html += `
-                    <div class = "show-item" data-id = "${data[i].show.id}">
-                        <div class = "show-name">
-                            <h3>${data[i].show.name}</h3>
-                            <a href = "#" class = "intro-btn">Learn More</a>
-                        </div>
-                    </div>
-                `;
-        }
+          <div class = "show-item" data-id = "${searchResult.show.id}">
+                              <div class = "show-name">
+                                  <h3>${searchResult.show.name}</h3>
+                                  <a href = "#" class = "intro-btn">Learn More</a>
+                              </div>
+                          </div>
+        `;
+          return html;
+        }, "");
         showList.classList.remove("notFound");
       } else {
         html = "Sorry, the search did not have any matches.";
@@ -43,6 +44,7 @@ function getShowIntro(e) {
   if (e.target.classList.contains("intro-btn")) {
     let showItem = e.target.parentElement.parentElement;
     fetch(`https://api.tvmaze.com/shows/${showItem.dataset.id}`)
+      //https: secure protocol
       .then((response) => response.json())
       .then((data) => showIntroModal(data));
   }
@@ -50,7 +52,6 @@ function getShowIntro(e) {
 
 // show  a paper
 function showIntroModal(show) {
-  console.log(show);
   let html = `
         <h2 class = "intro-title">${show.name}</h2>
         <div class = "intro-instruct">
