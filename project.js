@@ -37,7 +37,6 @@ function getShowList() {
       showList.innerHTML = html;
     });
 }
-
 // get instruction of the shows
 function getShowIntro(e) {
   e.preventDefault();
@@ -49,7 +48,6 @@ function getShowIntro(e) {
       .then((data) => showIntroModal(data));
   }
 }
-
 // show  a paper
 function showIntroModal(show) {
   let html = `
@@ -60,7 +58,7 @@ function showIntroModal(show) {
             <h3>Schedule:</h3>
             <p>${show.schedule.days} ${show.schedule.time}</p>
             <h3>Duration:</h3>
-            <p>${show.runtime}</p>
+            <p>${show.runtime} min.</p>
             <h3>Language:</h3>
             <p>${show.language}</p>
             <h3>Instructions:</h3>
@@ -72,7 +70,7 @@ function showIntroModal(show) {
             <img src = "${show.image.medium}" alt = "">
         </div>
         <div class = "intro-link">
-            <a href = "${show.url}" target = "_blank">See more</a>
+            <a href = "${show.url}" target = "_blank">Watch now</a>
         </div>
     `;
   showDetailsContent.innerHTML = html;
