@@ -23,6 +23,7 @@ function getShowList() {
           <div class = "show-item" data-id = "${searchResult.show.id}">
                               <div class = "show-name">
                                   <h3>${searchResult.show.name}</h3>
+                                  <img src=${searchResult.show.image.medium} alt="homepageLogo" />
                                   <a href = "#" class = "intro-btn">Learn More</a>
                               </div>
                           </div>
@@ -43,7 +44,6 @@ function getShowIntro(e) {
   if (e.target.classList.contains("intro-btn")) {
     let showItem = e.target.parentElement.parentElement;
     fetch(`https://api.tvmaze.com/shows/${showItem.dataset.id}`)
-      //https: secure protocol
       .then((response) => response.json())
       .then((data) => showIntroModal(data));
   }
