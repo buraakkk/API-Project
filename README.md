@@ -18,20 +18,9 @@ This site was built using [Demo](https://burak-project-api.netlify.app/#)
 To get started you can simply clone the repo and install the dependencies in the root folder.
 ```
 
-## Installing Dependencies
-```
-git clone https://github.com/buraakkk/quiz.git
-npm install
-npm run build
-```
+## Development
 
-## Usage
-```
-npm start
-```
-
-Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+To run this project locally you will need to open `index.html` in your browser using a local server. LiveServer, `http-server`, `study-lenses`, or any other local static server will work.
 
 
 In this website you can search the TV shows and watch what you want.
