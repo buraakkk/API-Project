@@ -27,7 +27,7 @@ function getShowList() {
           <div class = "show-item" data-id = "${searchResult.show.id}">
                               <div class = "show-name">
                                   <h3>${searchResult.show.name}</h3>
-                                  <img src="/images/download.png" alt="homepageLogo" />
+                                  <img src="/images/imageNotFound.png" alt="homepageLogo" />
                                   <a href = "#" class = "intro-btn">Learn More</a>
                               </div>
                           </div>
