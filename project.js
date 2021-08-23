@@ -19,7 +19,22 @@ function getShowList() {
       let html = "";
       if (Array.isArray(data) && data.length > 0) {
         html = data.reduce((html, searchResult) => {
-          html += `
+          if (
+            searchResult.show.image === null ||
+            searchResult.show.image === ""
+          ) {
+            html += `
+          <div class = "show-item" data-id = "${searchResult.show.id}">
+                              <div class = "show-name">
+                                  <h3>${searchResult.show.name}</h3>
+                                  <img src="/images/download.png" alt="homepageLogo" />
+                                  <a href = "#" class = "intro-btn">Learn More</a>
+                              </div>
+                          </div>
+        `;
+            return html;
+          } else {
+            html += `
           <div class = "show-item" data-id = "${searchResult.show.id}">
                               <div class = "show-name">
                                   <h3>${searchResult.show.name}</h3>
@@ -28,7 +43,8 @@ function getShowList() {
                               </div>
                           </div>
         `;
-          return html;
+            return html;
+          }
         }, "");
         showList.classList.remove("notFound");
       } else {
