@@ -14,9 +14,9 @@ API-Project app created using vanilla JS, connects to TV-Maze and dynamically re
 ![image](https://user-images.githubusercontent.com/50028862/130524356-59e4d53e-2663-4e3a-bb21-2a42937f9d4c.png)
 
 ## Getting Started
-```
+
 To get started you can simply clone the repo and install the dependencies in the root folder.
-```
+
 
 ## Development
 
